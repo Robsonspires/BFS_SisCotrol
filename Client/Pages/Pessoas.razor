@@ -1,0 +1,64 @@
+﻿@page "/pessoas"
+
+@using BFS_SisControl.Client.Services;
+@using System.ComponentModel.DataAnnotations
+@using BFS_SisControl.Shared
+
+@inject IServicoPessoa ServicoPessoa
+@inject NavigationManager NavigationManager
+
+<PageTitle>Pessoas</PageTitle>
+
+<h3>Pessoas</h3>
+
+<button class="btn btn-success" @onclick="CriarNovaPessoa"><i class="oi oi-person">Cadastrar Nova Pessoa</i></button>
+<p />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data Nascimento</th>
+            <th>Email</th>
+            <th>Fone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tbPessoa in ServicoPessoa.TbPessoas)
+        {
+            <tr>
+                <td>@tbPessoa.Nome</td>
+                <td>@tbPessoa.DataNascimento</td>
+                <td>@tbPessoa.Email</td>
+                <td>@tbPessoa.Fone</td>
+                <td>
+                    <button class="btn btn-primary" title="Editar" @onclick="(() => ShowPessoa(pessoa.Id))">
+                        <i class="oi oi-pencil"></i>
+                    </button>
+                    <button class="btn btn-danger" title="Deletar" @onclick="(() => ShowPessoa(pessoa.Id,3))">
+                        <i class="oi oi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await ServicoPessoa.GetPessoas();
+    }
+
+    void CriarNovaPessoa()
+    {
+        NavigationManager.NavigateTo("/pessoa");
+    }
+
+    void MostraPessoa(int id)
+    {
+        NavigationManager.NavigateTo($"/pessoa{id}");
+    }
+}

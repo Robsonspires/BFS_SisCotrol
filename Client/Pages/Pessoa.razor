@@ -1,0 +1,86 @@
+﻿@page "/pessoa"
+@page "/pessoa/{id:int}"
+@page "/pessoa/{id:int}/{action:int}"
+
+@inject IServicoPessoa ServicoPessoa
+@using System.ComponentModel.DataAnnotations
+@using BFS_SisControl.Shared
+
+@if (Id == null)
+{
+    <PageTitle>Cadastrar uma pessoa</PageTitle>
+    <h3>Cadastrar uma pessoa</h3>
+}
+else
+{
+    <PageTitle>Editar @tbPessoa.Nome</PageTitle>
+    <h3>Editar @tbPessoa.Nome</h3>
+}
+
+<EditForm Model="tbPessoa" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator />
+    <div>
+        <label>Nome</label>
+        <InputText id="firstname" @bind-Value="tbPessoa.Nome" class="form-control" />
+        <ValidationMessage For="@(() => tbPessoa.Nome)" />
+    </div>
+    <div>
+        <label>Data Nascimento</label>
+        <InputDate id="lastname" @bind-Value="tbPessoa.DataNascimento" class="form-control" />
+        <ValidationMessage For="@(() => tbPessoa.DataNascimento)" />
+    </div>
+    <div>
+        <label>eMail</label>
+        <InputText id="heroname" @bind-Value="tbPessoa.Email" class="form-control" />
+        <ValidationMessage For="@(() => tbPessoa.Email)" />
+    </div>
+    <div>
+        <label>Fone</label>
+        <InputText id="heroname" @bind-Value="tbPessoa.Fone" class="form-control" />
+        <ValidationMessage For="@(() => tbPessoa.Fone)" />
+    </div>
+    <br />
+    @if (Action == null)
+    {
+        <button type="submit" class="btn btn-primary">@btnText</button>
+    }
+    @if (Id != null && Action != null)
+    {
+        <button type="button" class="btn btn-danger" @onclick="DeleteHero">Deletar Heroi</button>
+    }
+
+</EditForm>
+
+@code {
+    [Parameter]
+    public int? Action { get; set; }
+    [Parameter]
+    public int? Id { get; set; }
+    string btnText => Id == null ? "Salvar Pessoa" : "Atualizar Pessoa";
+    private TbPessoa tbPessoa;
+
+    protected override async Task OnInitializedAsync()
+    {
+            await ServicoPessoa.GetPessoas();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        tbPessoa = await ServicoPessoa.GetPessoa((int)Id);
+    }
+
+    async Task HandleSubmit()
+    {
+        if (Id == null)
+            await ServicoPessoa.CreatePessoa(tbPessoa);
+        else
+            await ServicoPessoa.UpdatePessoa(tbPessoa);
+    }
+
+    async Task DeleteHero()
+    {
+        if (Id != null)
+            await ServicoPessoa.DeletePessoa(tbPessoa.Id);
+    }
+
+}

@@ -1,0 +1,65 @@
+using BFS_SisControl.Client.Pages;
+using BFS_SisControl.Shared;
+using Microsoft.AspNetCore.Components;
+using System.Net.Http.Json;
+//using BFS_SisControl.Client.Pages;
+
+namespace BFS_SisControl.Client.Services.ServicoPessoa
+
+{
+    public class ServicoPessoa : IServicoPessoa
+    {
+        private readonly NavigationManager _navigationManager;
+        private readonly HttpClient _http;
+
+        public ServicoPessoa(NavigationManager navigationManager, HttpClient http)
+        {
+            _navigationManager = navigationManager;
+            _http = http;
+        }
+
+        public List<TbPessoa> Pessoas { get; set; } = new List<TbPessoa>();
+        List<TbPessoa> IServicoPessoa.TbPessoas { get; set; }
+
+        public async Task CreatePessoa(TbPessoa pessoa)
+        {
+            var result = await _http.PostAsJsonAsync("api/pessoa", pessoa);
+            await SetPessoas(result);
+        }
+
+        private async Task SetPessoas(HttpResponseMessage result)
+        {
+            var resposta = await result.Content.ReadFromJsonAsync<List<TbPessoa>>();
+            Pessoas = resposta;
+            _navigationManager.NavigateTo("api/pessoas");
+        }
+
+        public async Task DeletePessoa(int id)
+        {
+            var result = await _http.DeleteAsync($"api/pessoa/{id}");
+            await SetPessoas(result);
+        }
+        public async Task UpdatePessoa(TbPessoa pessoa)
+        {
+            var result = await _http.PutAsJsonAsync($"api/pessoa/{pessoa.Id}", pessoa);
+            await SetPessoas(result);
+        }
+        public async Task<TbPessoa> GetPessoa(int id)
+        {
+            var result = await _http.GetFromJsonAsync<TbPessoa>($"api/pessoa/{id}");
+            if (result != null)
+                return result;
+            throw new Exception("Não foi possível encontrar o cadastro");
+        }
+
+        public async Task GetPessoas()
+        {
+            var result = await _http.GetFromJsonAsync<List<TbPessoa>>("api/pessoa");
+            if (result != null)
+                Pessoas = result;
+        }
+
+
+
+    }
+}

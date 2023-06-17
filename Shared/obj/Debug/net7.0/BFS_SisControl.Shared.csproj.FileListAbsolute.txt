@@ -1,0 +1,12 @@
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\bin\Debug\net7.0\BFS_SisControl.Shared.deps.json
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\bin\Debug\net7.0\BFS_SisControl.Shared.dll
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\bin\Debug\net7.0\BFS_SisControl.Shared.pdb
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\obj\Debug\net7.0\BFS_SisControl.Shared.csproj.AssemblyReference.cache
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\obj\Debug\net7.0\BFS_SisControl.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\obj\Debug\net7.0\BFS_SisControl.Shared.AssemblyInfoInputs.cache
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\obj\Debug\net7.0\BFS_SisControl.Shared.AssemblyInfo.cs
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\obj\Debug\net7.0\BFS_SisControl.Shared.csproj.CoreCompileInputs.cache
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\obj\Debug\net7.0\BFS_SisControl.Shared.dll
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\obj\Debug\net7.0\refint\BFS_SisControl.Shared.dll
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\obj\Debug\net7.0\BFS_SisControl.Shared.pdb
+D:\Usr\Projetos Blazor\BFS_SisControl\Shared\obj\Debug\net7.0\ref\BFS_SisControl.Shared.dll

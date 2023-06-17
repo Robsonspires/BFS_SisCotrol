@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "BFS_SisControl.Shared/1.0.0": {
+        "runtime": {
+          "BFS_SisControl.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BFS_SisControl.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
