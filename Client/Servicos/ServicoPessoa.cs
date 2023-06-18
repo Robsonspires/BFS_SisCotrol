@@ -1,11 +1,8 @@
-using BFS_SisControl.Client.Pages;
 using BFS_SisControl.Shared;
 using Microsoft.AspNetCore.Components;
 using System.Net.Http.Json;
-//using BFS_SisControl.Client.Pages;
 
-namespace BFS_SisControl.Client.Services.ServicoPessoa
-
+namespace BFS_SisControl.Client.Servicos.ServicoPessoa
 {
     public class ServicoPessoa : IServicoPessoa
     {
@@ -18,8 +15,7 @@ namespace BFS_SisControl.Client.Services.ServicoPessoa
             _http = http;
         }
 
-        public List<TbPessoa> Pessoas { get; set; } = new List<TbPessoa>();
-        List<TbPessoa> IServicoPessoa.TbPessoas { get; set; }
+        public List<TbPessoa> TbPessoas { get; set; } = new List<TbPessoa>();
 
         public async Task CreatePessoa(TbPessoa pessoa)
         {
@@ -30,7 +26,7 @@ namespace BFS_SisControl.Client.Services.ServicoPessoa
         private async Task SetPessoas(HttpResponseMessage result)
         {
             var resposta = await result.Content.ReadFromJsonAsync<List<TbPessoa>>();
-            Pessoas = resposta;
+            TbPessoas = resposta;
             _navigationManager.NavigateTo("api/pessoas");
         }
 
@@ -54,9 +50,9 @@ namespace BFS_SisControl.Client.Services.ServicoPessoa
 
         public async Task GetPessoas()
         {
-            var result = await _http.GetFromJsonAsync<List<TbPessoa>>("api/pessoa");
+            var result = await _http.GetFromJsonAsync<List<TbPessoa>>("api/pessoas");
             if (result != null)
-                Pessoas = result;
+                TbPessoas = result;
         }
 
 

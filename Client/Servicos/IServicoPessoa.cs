@@ -1,6 +1,6 @@
 using BFS_SisControl.Shared;
 
-namespace BFS_SisControl.Client.Services
+namespace BFS_SisControl.Client.Servicos
 {
     public interface IServicoPessoa
     {

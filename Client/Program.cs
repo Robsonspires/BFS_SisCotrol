@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using BFS_SisControl.Client;
-using BFS_SisControl.Client.Services;
-using BFS_SisControl.Client.Services.ServicoPessoa;
+using BFS_SisControl.Client.Servicos;
+using BFS_SisControl.Client.Servicos.ServicoPessoa;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

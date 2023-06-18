@@ -13,31 +13,31 @@
 }
 else
 {
-    <PageTitle>Editar @tbPessoa.Nome</PageTitle>
-    <h3>Editar @tbPessoa.Nome</h3>
+    <PageTitle>Editar @tbPessoas.Nome</PageTitle>
+    <h3>Editar @tbPessoas.Nome</h3>
 }
 
-<EditForm Model="tbPessoa" OnValidSubmit="HandleSubmit">
+<EditForm Model="tbPessoas" OnValidSubmit="HandleSubmit">
     <DataAnnotationsValidator />
     <div>
         <label>Nome</label>
-        <InputText id="firstname" @bind-Value="tbPessoa.Nome" class="form-control" />
-        <ValidationMessage For="@(() => tbPessoa.Nome)" />
+        <InputText id="firstname" @bind-Value="tbPessoas.Nome" class="form-control" />
+        <ValidationMessage For="@(() => tbPessoas.Nome)" />
     </div>
     <div>
         <label>Data Nascimento</label>
-        <InputDate id="lastname" @bind-Value="tbPessoa.DataNascimento" class="form-control" />
-        <ValidationMessage For="@(() => tbPessoa.DataNascimento)" />
+        <InputDate id="lastname" @bind-Value="tbPessoas.DataNascimento" class="form-control" />
+        <ValidationMessage For="@(() => tbPessoas.DataNascimento)" />
     </div>
     <div>
         <label>eMail</label>
-        <InputText id="heroname" @bind-Value="tbPessoa.Email" class="form-control" />
-        <ValidationMessage For="@(() => tbPessoa.Email)" />
+        <InputText id="heroname" @bind-Value="tbPessoas.Email" class="form-control" />
+        <ValidationMessage For="@(() => tbPessoas.Email)" />
     </div>
     <div>
         <label>Fone</label>
-        <InputText id="heroname" @bind-Value="tbPessoa.Fone" class="form-control" />
-        <ValidationMessage For="@(() => tbPessoa.Fone)" />
+        <InputText id="heroname" @bind-Value="tbPessoas.Fone" class="form-control" />
+        <ValidationMessage For="@(() => tbPessoas.Fone)" />
     </div>
     <br />
     @if (Action == null)
@@ -46,7 +46,7 @@ else
     }
     @if (Id != null && Action != null)
     {
-        <button type="button" class="btn btn-danger" @onclick="DeleteHero">Deletar Heroi</button>
+        <button type="button" class="btn btn-danger" @onclick="DeletePessoa">Deletar Heroi</button>
     }
 
 </EditForm>
@@ -57,7 +57,7 @@ else
     [Parameter]
     public int? Id { get; set; }
     string btnText => Id == null ? "Salvar Pessoa" : "Atualizar Pessoa";
-    private TbPessoa tbPessoa;
+    private TbPessoa tbPessoas;
 
     protected override async Task OnInitializedAsync()
     {
@@ -66,21 +66,21 @@ else
 
     protected override async Task OnParametersSetAsync()
     {
-        tbPessoa = await ServicoPessoa.GetPessoa((int)Id);
+        tbPessoas = await ServicoPessoa.GetPessoa((int) Id);
     }
 
     async Task HandleSubmit()
     {
         if (Id == null)
-            await ServicoPessoa.CreatePessoa(tbPessoa);
+            await ServicoPessoa.CreatePessoa(tbPessoas);
         else
-            await ServicoPessoa.UpdatePessoa(tbPessoa);
+            await ServicoPessoa.UpdatePessoa(tbPessoas);
     }
 
-    async Task DeleteHero()
+    async Task DeletePessoa()
     {
         if (Id != null)
-            await ServicoPessoa.DeletePessoa(tbPessoa.Id);
+            await ServicoPessoa.DeletePessoa(tbPessoas.Id);
     }
 
 }

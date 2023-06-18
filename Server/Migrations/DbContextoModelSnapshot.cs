@@ -74,7 +74,7 @@ namespace BFS_SisControl.Server.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TbPessoa");
+                    b.ToTable("TbPessoas");
 
                     b.HasData(
                         new
@@ -85,8 +85,8 @@ namespace BFS_SisControl.Server.Migrations
                             Cidade = "Guarapari",
                             Complemento = "Apto 001",
                             Cpf = "111.111.111-11",
-                            DataAtualizacao = new DateTime(2023, 6, 17, 8, 51, 40, 532, DateTimeKind.Local).AddTicks(7000),
-                            DataCadastro = new DateTime(2023, 6, 17, 8, 51, 40, 532, DateTimeKind.Local).AddTicks(6988),
+                            DataAtualizacao = new DateTime(2023, 6, 18, 0, 30, 11, 870, DateTimeKind.Local).AddTicks(337),
+                            DataCadastro = new DateTime(2023, 6, 18, 0, 30, 11, 870, DateTimeKind.Local).AddTicks(328),
                             DataNascimento = new DateTime(1972, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "Teste@teste.com",
                             Endereco = "Rua da minha casa, 001",
@@ -102,8 +102,8 @@ namespace BFS_SisControl.Server.Migrations
                             Cidade = "Guarapari",
                             Complemento = "Apto 002",
                             Cpf = "222.222.222-22",
-                            DataAtualizacao = new DateTime(2023, 6, 17, 8, 51, 40, 532, DateTimeKind.Local).AddTicks(7091),
-                            DataCadastro = new DateTime(2023, 6, 17, 8, 51, 40, 532, DateTimeKind.Local).AddTicks(7090),
+                            DataAtualizacao = new DateTime(2023, 6, 18, 0, 30, 11, 870, DateTimeKind.Local).AddTicks(421),
+                            DataCadastro = new DateTime(2023, 6, 18, 0, 30, 11, 870, DateTimeKind.Local).AddTicks(421),
                             DataNascimento = new DateTime(1974, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "Teste@teste.com",
                             Endereco = "Rua da minha casa, 002",
@@ -119,8 +119,8 @@ namespace BFS_SisControl.Server.Migrations
                             Cidade = "Guarapari",
                             Complemento = "Apto 003",
                             Cpf = "333.333.333-33",
-                            DataAtualizacao = new DateTime(2023, 6, 17, 8, 51, 40, 532, DateTimeKind.Local).AddTicks(7101),
-                            DataCadastro = new DateTime(2023, 6, 17, 8, 51, 40, 532, DateTimeKind.Local).AddTicks(7101),
+                            DataAtualizacao = new DateTime(2023, 6, 18, 0, 30, 11, 870, DateTimeKind.Local).AddTicks(430),
+                            DataCadastro = new DateTime(2023, 6, 18, 0, 30, 11, 870, DateTimeKind.Local).AddTicks(429),
                             DataNascimento = new DateTime(1997, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "Teste@teste.com",
                             Endereco = "Rua da minha casa, 003",

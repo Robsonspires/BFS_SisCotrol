@@ -1,17 +1,15 @@
 ﻿@page "/pessoas"
 
-@using BFS_SisControl.Client.Services;
-@using System.ComponentModel.DataAnnotations
+@using BFS_SisControl.Client.Servicos
 @using BFS_SisControl.Shared
 
 @inject IServicoPessoa ServicoPessoa
 @inject NavigationManager NavigationManager
 
-<PageTitle>Pessoas</PageTitle>
+<PageTitle> Lista de pessoas </PageTitle>
+<h3>Lista de Pessoas</h3>
 
-<h3>Pessoas</h3>
-
-<button class="btn btn-success" @onclick="CriarNovaPessoa"><i class="oi oi-person">Cadastrar Nova Pessoa</i></button>
+<button class="btn btn-success" @onclick="CriarNovaPessoa"><i class="oi oi-person"> Cadastrar Nova Pessoa</i></button>
 <p />
 
 <table class="table">
@@ -19,28 +17,44 @@
         <tr>
             <th>Nome</th>
             <th>Data Nascimento</th>
+            <th>CPF</th>
             <th>Email</th>
             <th>Fone</th>
-            <th></th>
+            <th>CEP</th>
+            <th>Endereço</th>
+            <th>Complemento</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th>UF</th>
+            <th>#</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var tbPessoa in ServicoPessoa.TbPessoas)
+        @foreach (var lpessoa in ServicoPessoa.TbPessoas)
         {
             <tr>
-                <td>@tbPessoa.Nome</td>
-                <td>@tbPessoa.DataNascimento</td>
-                <td>@tbPessoa.Email</td>
-                <td>@tbPessoa.Fone</td>
+                <td>@lpessoa.Nome</td>
+                <td>@lpessoa.DataNascimento</td>
+                <td>@lpessoa.Cpf</td>
+                <td>@lpessoa.Email</td>
+                <td>@lpessoa.Fone</td>
+                <td>@lpessoa.CEP</td>
+                <td>@lpessoa.Endereco</td>
+                <td>@lpessoa.Complemento</td>
+                <td>@lpessoa.Bairro</td>
+                <td>@lpessoa.Cidade</td>
+                <td>@lpessoa.UF</td>
                 <td>
-                    <button class="btn btn-primary" title="Editar" @onclick="(() => ShowPessoa(pessoa.Id))">
+                    <button class="btn btn-primary" title="Editar" @onclick="(() => MostraPessoa(lpessoa.Id))">
                         <i class="oi oi-pencil"></i>
                     </button>
-                    <button class="btn btn-danger" title="Deletar" @onclick="(() => ShowPessoa(pessoa.Id,3))">
+
+                    <button class="btn btn-danger" title="Deletar" @onclick="(() => MostraPessoaDelete(lpessoa.Id,3))">
                         <i class="oi oi-trash"></i>
                     </button>
                 </td>
             </tr>
+
         }
     </tbody>
 </table>
@@ -60,5 +74,9 @@
     void MostraPessoa(int id)
     {
         NavigationManager.NavigateTo($"/pessoa{id}");
+    }
+    void MostraPessoaDelete(int id, int action)
+    {
+        NavigationManager.NavigateTo($"/pessoa/{id}/{action}");
     }
 }

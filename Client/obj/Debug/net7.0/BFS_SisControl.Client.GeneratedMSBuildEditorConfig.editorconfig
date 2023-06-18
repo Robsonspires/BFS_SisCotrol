@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVzc29hLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Usr/Projetos Blazor/BFS_SisControl/Client/Pages/Pessoas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVzc29hcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Usr/Projetos Blazor/BFS_SisControl/Client/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

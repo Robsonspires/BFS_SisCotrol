@@ -10,9 +10,9 @@ namespace BFS_SisControl.Shared
         [Required(ErrorMessage = "Digite o nome completo.")]
         public string Nome { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Entre com a data de nascimetno.")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        //[Required(ErrorMessage = "Entre com a data de nascimetno.")]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataNascimento { get; set; }
         public string Cpf { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;

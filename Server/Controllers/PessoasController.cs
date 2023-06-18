@@ -9,11 +9,11 @@ namespace BFS_SisControl.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PessoaController : ControllerBase
+    public class PessoasController : ControllerBase
     {
         private readonly DbContexto _contexto;
 
-        public PessoaController(DbContexto contexto)
+        public PessoasController(DbContexto contexto)
         {
             _contexto = contexto;
         }
@@ -22,8 +22,8 @@ namespace BFS_SisControl.Server.Controllers
         [HttpGet("pessoas")]
         public async Task<ActionResult<List<TbPessoa>>> BuscaPessoas()
         {
-            var comics = await _contexto.TbPessoas.ToListAsync();
-            return Ok(comics);
+            var pessoas = await _contexto.TbPessoas.ToListAsync();
+            return Ok(pessoas);
         }
 
         [HttpGet("{id}")]
@@ -33,7 +33,7 @@ namespace BFS_SisControl.Server.Controllers
                     .FirstOrDefaultAsync(x => x.Id == id);
             if (pessoa == null)
             {
-                return NotFound("Não encontramos o Heroi");
+                return NotFound("Não encontramos a pessoa");
             }
             return Ok(pessoa);
         }
