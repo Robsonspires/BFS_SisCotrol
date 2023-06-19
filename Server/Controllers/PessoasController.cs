@@ -1,9 +1,7 @@
-
 using BFS_SisControl.Server.DataContext;
 using BFS_SisControl.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Runtime.ConstrainedExecution;
 
 namespace BFS_SisControl.Server.Controllers
 {

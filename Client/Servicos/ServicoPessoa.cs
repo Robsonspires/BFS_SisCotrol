@@ -50,7 +50,7 @@ namespace BFS_SisControl.Client.Servicos.ServicoPessoa
 
         public async Task GetPessoas()
         {
-            var result = await _http.GetFromJsonAsync<List<TbPessoa>>("api/pessoas");
+            var result = await _http.GetFromJsonAsync<List<TbPessoa>>("api/tbpessoas");
             if (result != null)
                 TbPessoas = result;
         }

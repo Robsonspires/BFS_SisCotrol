@@ -199,14 +199,14 @@
       "netstandard.dll": "sha256-IEYNogoWZgSKXlx0+Pn2bt3irEZ1nuCnjK9Bm+3OWYw=",
       "System.Private.CoreLib.dll": "sha256-XrgDwG5fUErLSziY3dAwA0PYLIirTlornT8Lb6U2DUs=",
       "BFS_SisControl.Shared.dll": "sha256-l3H26ruEFou8EenpAbnnC2QDMFD02lIboXTwG9KU8TQ=",
-      "BFS_SisControl.Client.dll": "sha256-nUtwUIFF23oPlPH2yP1xNdVU+j7da3zrjE+7AGQ7WMI="
+      "BFS_SisControl.Client.dll": "sha256-TxSGQddT5hoIr1KM0llwwRspspMBkxLon+JLV+M\/fYI="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "BFS_SisControl.Shared.pdb": "sha256-ASedGybsw7zBDtu9GB4Qq+5U0XCBiBzAH+UaCSU00Q4=",
-      "BFS_SisControl.Client.pdb": "sha256-VStBUuaQiT\/EeqBNa58dz57hJ8EcSyKzGAsc34Pedkc="
+      "BFS_SisControl.Client.pdb": "sha256-n0noWXOPbA1KcvMczLLUd8wqNHa\/hR\/r\/SaIZkucBYA="
     },
     "runtime": {
       "dotnet.7.0.7.qoflxsv9f5.js": "sha256-JmMF+3r0RjsO0yYBfDP8Pq2ahxBSJHFu7mZNB9lqLsw=",
